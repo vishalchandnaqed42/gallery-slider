@@ -1,6 +1,6 @@
 import { act, fireEvent, render } from '@testing-library/react';
 
-import Gallery from '../index';
+import Gallery from 'Features/Gallery/Gallery';
 import { MOCK_MEDIA_FILES } from './mockData';
 
 function getActiveElements(elements) {
