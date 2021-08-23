@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Container from 'Components/Base/Container';
 import { MEDIA_FILES } from 'Services/Constants';
 import Gallery from './Gallery';
+import Select from 'Components/Base/Select';
 
 const GalleryWrapper = (props) => {
   const [visibleItems, setVisibleItems] = useState(1);
@@ -13,12 +14,11 @@ const GalleryWrapper = (props) => {
 
   return <>
     <Container className="align-center">
-      <select value={visibleItems} onChange={onChangeVisibleItems}>
-        <option value={1}>1</option>
-        <option value={2}>2</option>
-        <option value={3}>3</option>
-        <option value={4}>4</option>
-      </select>
+      <Select value={visibleItems} onChange={onChangeVisibleItems}>
+        {[1, 2, 3, 4].map(item => {
+          return <option value={item}>{item}</option>
+        })}
+      </Select>
     </Container>
     <Container className="align-center">
       <Gallery
